@@ -1,0 +1,1 @@
+docker run -itd --name pwnisking-container --rm -p 20-22:20-22 -p 47400-47470:47400-47470 ghcr.io/amanonearth/ctf/pwnisking:latest

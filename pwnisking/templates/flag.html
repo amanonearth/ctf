@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title", style="color:white">
+Submit Your Flag</h1>
+
+<h2 class="subtitle", style="color:white">
+</h2>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <form action="/flag" method="POST">
+        <div class = "form-group">
+        <input type="text" name = "flagu">
+      </div>
+      <input class="btn btn-primary" type="submit" value="{{ value1 }}">
+    </form>
+
+{% endblock %}

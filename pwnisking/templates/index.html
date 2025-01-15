@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+  </symbol>
+  </svg>
+  <div class="alert alert-success d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+  <div> <strong> &nbsp;{{ message }} </strong></div>
+</div>
+
+{% endfor %}
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+<div class="card border-dark mb-3" style="max-width: 80rem;">
+    <div class="card-header bg-transparent border-dark">Description</div>
+  <div class="card-body text-danger">
+    <h5 class="card-title">PwnisKing</h5>
+    <p class="card-text">Welcome to this CTF. You have to access the system and submit two flags. <br>1. user flag <br> 2. root flag</p>
+  </div>
+</div>
+
+<div class="d-grid gap-2 d-md-block">
+<div class="btn btn-primary">
+  <form action="/" method="POST">
+    <input class="btn btn-primary" type="submit" value="{{ value }}">
+  </form>
+</div>
+&nbsp;
+<button type="button" class="btn btn-primary">
+  Machine Status: <span class="badge bg-secondary">{{ status }} {{ msz }}</span>
+</button>
+</div>
+<br>
+{{ resetinfo }}
+{{ msz1 }}
+{% endblock %}
