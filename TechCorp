@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if docker network inspect osint-vulnmac-network | grep Id
+	then
+	  docker network rm osint-vulnmac-network
+	  docker network create osint-vulnmac-network
+else
+	docker network create osint-vulnmac-network
+
+fi
+
+docker run --network=osint-vulnmac-network --name vulnmac-container -p 15000:15000 ghcr.io/amanonearth/ctf/techcorp-vulnmac:latest &
+docker run --network=osint-vulnmac-network --name osint-container -p 80:80 ghcr.io/amanonearth/ctf/techcorp-osint:latest &
