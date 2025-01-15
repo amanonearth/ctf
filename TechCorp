@@ -9,5 +9,5 @@ else
 
 fi
 
-docker run --network=osint-vulnmac-network --name vulnmac-container -p 15000:15000 ghcr.io/amanonearth/ctf/techcorp-vulnmac:latest &
-docker run --network=osint-vulnmac-network --name osint-container -p 80:80 ghcr.io/amanonearth/ctf/techcorp-osint:latest &
+docker run -d -itd --network=osint-vulnmac-network --name vulnmac-container --restart=unless-stopped -p 5000:5000 ghcr.io/amanonearth/ctf/techcorp-vulnmac:latest
+docker run -d -itd --network=osint-vulnmac-network --name osint-container --restart=unless-stopped -p 80:80 ghcr.io/amanonearth/ctf/techcorp-osint:latest
