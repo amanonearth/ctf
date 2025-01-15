@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker pull ghcr.io/amanonearth/ctf/pwnisking:latest
+pip3 install -r requirements.txt
+python3 main.py
